@@ -5,3 +5,14 @@ let etch = document.createElement("div");
 etch.classList.add("etch");
 // Append the div to container.
 container.appendChild(etch);
+
+function makeGrid() {
+    for (let i = 0; i < 16 * 16; i++) {
+        let divs = document.createElement("div");
+        divs.classList.add("divs");
+        container.appendChild(divs);
+        etch.appendChild(divs);
+    }
+}
+
+makeGrid();
