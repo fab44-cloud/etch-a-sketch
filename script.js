@@ -14,6 +14,10 @@ function makeGrid() {
         etch.appendChild(divs);
         divs.style.height = 700 / 16 + "px";
         divs.style.width = 700 / 16 + "px";
+
+        divs.addEventListener("click", () => {
+            divs.style.backgroundColor = "blue";
+        });
     }
 }
 
