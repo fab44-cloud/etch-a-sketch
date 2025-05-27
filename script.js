@@ -15,7 +15,7 @@ function makeGrid() {
         divs.style.height = 700 / 16 + "px";
         divs.style.width = 700 / 16 + "px";
 
-        divs.addEventListener("click", () => {
+        divs.addEventListener("mouseover", () => {
             divs.style.backgroundColor = "blue";
         });
     }
