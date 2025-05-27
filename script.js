@@ -12,6 +12,8 @@ function makeGrid() {
         divs.classList.add("divs");
         container.appendChild(divs);
         etch.appendChild(divs);
+        divs.style.height = 700 / 16 + "px";
+        divs.style.width = 700 / 16 + "px";
     }
 }
 
