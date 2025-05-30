@@ -22,25 +22,30 @@ function makeGrid() {
 }
 
 function removeGrid() {
-    container.removeChild(etch);
+    etch.innerHTML = "";
 }
 
-button.addEventListner("click", () => {
+function createGrid() {
+    let userInput = prompt("How many squares?", 16);
+    for (let i = 0; i < userInput * userInput; i++) {
+        let divs = document.createElement("div");
+
+        divs.classList.add("divs");
+        container.appendChild(divs);
+        etch.appendChild(divs);
+        divs.style.height = 700 / userInput + "px";
+        divs.style.width = 700 / userInput + "px";
+
+        divs.addEventListener("mouseover", () => {
+            divs.style.backgroundColor = "gold";
+        });
+    }
+}
+
+button.addEventListener("click", () => {
     removeGrid()
-    resizeGrid()
-})
+    createGrid()
+});
 
-// function resizeGrid() {
-//     userInput = prompt("How many squares?", 16);
-//     for (let i = 0; i < userInput * userInput; i++) {
-//         let divs = document.createElement("div");
-
-//         divs.classList.add("divs");
-//         container.appendChild(divs);
-//         etch.appendChild(divs);
-//         divs.style.height = 700 / userInput + "px";
-//         divs.style.width = 700 / userInput + "px";
-//     }
-// }
 
 makeGrid();
