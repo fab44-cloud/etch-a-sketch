@@ -21,6 +21,10 @@ function makeGrid() {
     }
 }
 
+function removeGrid() {
+    container.removeChild(etch);
+}
+
 button.addEventListner("click", () => {
     removeGrid()
     resizeGrid()
