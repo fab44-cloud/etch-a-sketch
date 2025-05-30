@@ -21,7 +21,12 @@ function makeGrid() {
     }
 }
 
-// function getUserInput() {
+button.addEventListner("click", () => {
+    removeGrid()
+    resizeGrid()
+})
+
+// function resizeGrid() {
 //     userInput = prompt("How many squares?", 16);
 //     for (let i = 0; i < userInput * userInput; i++) {
 //         let divs = document.createElement("div");
