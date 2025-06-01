@@ -16,7 +16,8 @@ function makeGrid() {
         divs.style.width = 700 / 16 + "px";
 
         divs.addEventListener("mouseover", () => {
-            divs.style.backgroundColor = "blue";
+            const randomColor = getRandomColor()
+            divs.style.backgroundColor = randomColor;
         });
     }
 }
@@ -26,7 +27,7 @@ function removeGrid() {
 }
 
 function createGrid() {
-    let userInput = prompt("Please enter a new grid size. Max is 100.", 16);
+    let userInput = prompt("Please enter the number of squares per side for the new grid (1-100).");
     if (userInput > 100) {
         createGrid();
     } else {
@@ -40,10 +41,18 @@ function createGrid() {
         divs.style.width = 700 / userInput + "px";
 
         divs.addEventListener("mouseover", () => {
-            divs.style.backgroundColor = "purple";
+            const randomColor = getRandomColor()
+            divs.style.backgroundColor = randomColor;
         });
     }
     }
+}
+
+function getRandomColor() {
+    const red = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+    return `rgb(${red}, ${green}, ${blue})`;
 }
 
 button.addEventListener("click", () => {
