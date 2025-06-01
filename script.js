@@ -26,8 +26,11 @@ function removeGrid() {
 }
 
 function createGrid() {
-    let userInput = prompt("How many squares?", 16);
-    for (let i = 0; i < userInput * userInput; i++) {
+    let userInput = prompt("Please enter a new grid size. Max is 100.", 16);
+    if (userInput > 100) {
+        createGrid();
+    } else {
+        for (let i = 0; i < userInput * userInput; i++) {
         let divs = document.createElement("div");
 
         divs.classList.add("divs");
@@ -37,8 +40,9 @@ function createGrid() {
         divs.style.width = 700 / userInput + "px";
 
         divs.addEventListener("mouseover", () => {
-            divs.style.backgroundColor = "gold";
+            divs.style.backgroundColor = "purple";
         });
+    }
     }
 }
 
