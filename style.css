@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: rgb(208, 201, 201);
+    background-color: teal;
 }
 
 #container {
@@ -17,11 +17,10 @@ body {
     flex-wrap: wrap;
     height: 700px;
     width: 700px;
-    border: 1px solid black;
 }
 
 .divs {
-    border: 1px solid black;
+    border: 1px solid bisque;
     height: 20px;
     width: 20px;
     box-sizing: border-box;
@@ -30,5 +29,6 @@ body {
 h1 {
     display: flex;
     justify-content: center; 
-    color:blue;
+    color: bisque;
+    font-style: oblique;
 }
