@@ -28,23 +28,27 @@ function removeGrid() {
 
 function createGrid() {
     let userInput = prompt("Enter the number of squares per side for the new grid (1-100).");
-    if (userInput > 100) {
+    if (userInput === null) {
+        return;
+    } else if (userInput > 100 ||
+        userInput < 1) {
+        console.log(userInput);
         createGrid();
     } else {
         for (let i = 0; i < userInput * userInput; i++) {
-        let divs = document.createElement("div");
-
-        divs.classList.add("divs");
-        container.appendChild(divs);
-        etch.appendChild(divs);
-        divs.style.height = 700 / userInput + "px";
-        divs.style.width = 700 / userInput + "px";
-
-        divs.addEventListener("mouseover", () => {
-            const randomColor = getRandomColor()
-            divs.style.backgroundColor = randomColor;   
-        });
-    }
+            let divs = document.createElement("div");
+    
+            divs.classList.add("divs");
+            container.appendChild(divs);
+            etch.appendChild(divs);
+            divs.style.height = 700 / userInput + "px";
+            divs.style.width = 700 / userInput + "px";
+    
+            divs.addEventListener("mouseover", () => {
+                const randomColor = getRandomColor()
+                divs.style.backgroundColor = randomColor;   
+            });
+        }
     }
 }
 
