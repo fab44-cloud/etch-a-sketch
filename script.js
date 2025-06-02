@@ -27,7 +27,7 @@ function removeGrid() {
 }
 
 function createGrid() {
-    let userInput = prompt("Please enter the number of squares per side for the new grid (1-100).");
+    let userInput = prompt("Enter the number of squares per side for the new grid (1-100).");
     if (userInput > 100) {
         createGrid();
     } else {
@@ -42,7 +42,7 @@ function createGrid() {
 
         divs.addEventListener("mouseover", () => {
             const randomColor = getRandomColor()
-            divs.style.backgroundColor = randomColor;
+            divs.style.backgroundColor = randomColor;   
         });
     }
     }
